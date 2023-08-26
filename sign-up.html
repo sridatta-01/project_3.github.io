@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background: #fff;
+}
+.logo-2 {
+    font-size: 2.5rem;
+    color:#000;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+}
+.logo-2 span {
+    color:#e80d9b;
+}
+nav {
+    position: fixed;
+    z-index: 1;
+    padding: 25px 60px;
+}
+nav a img {
+    width: 160px;
+}
+.form-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 430px;
+    padding: 60px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.75);
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+}
+.form-wrapper h2 {
+    color: #fff;
+    font-size: 30px;
+}
+.form-wrapper form {
+    margin: 25px 0 65px;
+}
+form .form-control {
+    position: relative;
+    height: 50px;
+    margin-bottom: 16px;
+}
+.form-control input {
+    height: 100%;
+    width: 100%;
+    background: #333;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 4px;
+    padding: 0 20px;
+}
+.form-control input:is(:focus,:valid) {
+    padding: 16px 20px ;
+    background: #444;
+}
+.form-control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    color: #8c8c8c;
+    pointer-events: none;
+    font-size: 15px;
+    transform: translateY(-50%);
+    transition: all 0.1s ease;
+}
+.form-control input:is(:focus,:valid) ~ label {
+    font-size: 11px;
+    transform: translateY(-130%);
+}
+form button {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px;
+    background: #dd0202;
+    margin: 25px 0 10px;
+    transition: 0.1s ease;
+}
+form button:hover {
+    background: #010ec6;
+}
+form .form-help {
+    display: flex;
+    justify-content: space-between;
+}
+form .remember-me{
+    display: flex;
+}
+form .remember-me input {
+    margin-right: 5px;
+    accent-color: #b3b3b3;
+}
+form.form-help :where(label,a) {
+    font-size: 11px;
+}
+.form-wrapper :where(label,p,small,a) {
+    color: #b3b3b3;
+}
+.form-wrapper p a {
+    color: #fff;
+}
+.form-wrapper small {
+    display: block;
+    margin-top: 15px;
+}
+.form-wrapper small a {
+    color: #0071eb;
+}
+.form-wrapper a {
+    text-decoration: none;
+}
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 740px) {
+    body::before{
+        display: none;
+    }
+    nav,.form-wrapper {
+        padding: 20px;
+    }
+    nav a img {
+        width: 140px;
+    }
+    .form-wrapper{
+        top: 43%;
+        width:100%
+    }
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="logo-2" href="/">Healthy <span>Gym</span></a>
+    </nav>
+    <div class="form-wrapper">
+        <h2>Sign Up Now</h2>
+        <form action="/signup" method="post">
+            <div class="form-control">
+                <input type="text" name="username" required>
+                <label>username</label>
+            </div>
+            <div class="form-control">
+                <input type="text" name="email_address" required>
+                <label>Email or phone number</label>
+            </div>
+            <div class="form-control">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <button type="submit">Sign up</button>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <a href="#">Need Help?</a>
+            </div>
+        </form>
+        <p>ALREADY A MEMBER ? <a href="/login">Log in</a></p>
+    </div>
+</body>
+</html>
