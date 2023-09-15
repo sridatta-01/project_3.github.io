@@ -1,4 +1,4 @@
-# Nelflix Clone Documentation
+# Healthy gym Documentation
 
 <p align="center">
   <a href="" rel="noopener">
